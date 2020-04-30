@@ -1,2 +1,2 @@
 include ':app', ':message-ui', ':common', ':database'
-rootProject.name = "Chat Tutorial"
+rootProject.name = "Message Tutorial"
