@@ -1,6 +1,6 @@
-# Chat-Tutorial - MVVM
+# Message Tutorial - MVVM
 
-Based on https://medium.com/@aungkyawmyint_26195/room-database-with-mvvm-and-kotlin-coroutines-android-a1b1b0ef7b84
+Sample Demo Application to demonstrate MVVM.
 
 <ul>
   <li>Dagger -> dependency injection framework</li>
