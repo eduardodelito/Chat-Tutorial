@@ -1,6 +1,26 @@
-# Chat-Tutorial
+# Chat-Tutorial - MVVM
 
 Based on https://medium.com/@aungkyawmyint_26195/room-database-with-mvvm-and-kotlin-coroutines-android-a1b1b0ef7b84
+
+<ul>
+  <li>Dagger</li>
+  <li>Navigation - navigate to a destination</li>
+  <li>DataBinding - to bind UI components in the layouts</li>
+  <li>Room Library -> used to handle database transaction (to cache the last server response from the itunes search API)</li>
+  <li>Dimens.xml -> used to store all view sizes</li>
+  <li>strings.xml -> used to store all string label that is needed by the application</li>
+  <li>RecyclerView</li>
+  <li>ConstraintLayout (Android Support)</li>
+</ul>
+
+The application project also contains 4 different modules.
+
+<ul>
+  <li>buildSrc - module that holds build specific classes. Currently it only have the Dependencies class. The Dependencies class contains library names and versions object that is used on gradle files</li>
+  <li>common - module that contains shared function, interface, classes & resources.</li>
+  <li>message-ui - module that handles the display/UI/UX of the track screens.</li>
+  <li>database - module that handles the local database of the application.</li>
+</ul>
 
 <b>App Screenshot:</b>
 
