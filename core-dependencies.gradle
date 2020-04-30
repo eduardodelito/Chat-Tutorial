@@ -1,0 +1,56 @@
+apply from: "../ktlint.gradle"
+/**
+ * Gradle file that is shared to all libraries and the app
+ */
+import dependencies.*
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs'
+
+ext {
+    appCompatVersion = Versions.appcompat
+}
+
+android {
+    defaultConfig {
+        multiDexEnabled true
+    }
+
+    kotlinOptions {
+        jvmTarget = Versions.jvmTarget
+    }
+}
+
+dependencies {
+
+    implementation Libs.Android.kotlinStdlib
+    implementation Libs.Android.coreKtx
+    implementation Libs.Android.appcompat
+    implementation Libs.Android.constraintLayout
+    implementation Libs.Android.legacySupportV4
+    implementation Libs.Android.lifecycleExtensions
+    implementation Libs.Android.lifecycleViewmodelKtx
+    implementation Libs.Android.recyclerview
+    implementation Libs.Android.navigationFragmentKtx
+    implementation Libs.Android.navigationUIKtx
+
+    implementation Libs.Dagger.core
+    implementation Libs.Dagger.android
+    implementation Libs.Dagger.androidSupport
+
+    implementation Libs.Android.roomRuntime
+    kapt Libs.Android.roomCompiler
+
+    implementation Libs.Android.roomKtx
+    implementation Libs.Android.roomRxJava
+    implementation Libs.Android.roomGuava
+
+    kapt Libs.Dagger.processor
+    kapt Libs.Dagger.compiler
+
+    testImplementation Libs.Test.junit
+    androidTestImplementation Libs.Test.extjunit
+    androidTestImplementation Libs.Test.espressoCore
+}

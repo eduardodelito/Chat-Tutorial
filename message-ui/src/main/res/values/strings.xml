@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Chat Tutorial</string>
+    <string name="message">Send Message</string>
+    <string name="send_btn_lbl">Send</string>
+</resources>
