@@ -3,9 +3,9 @@
 Based on https://medium.com/@aungkyawmyint_26195/room-database-with-mvvm-and-kotlin-coroutines-android-a1b1b0ef7b84
 
 <ul>
-  <li>Dagger</li>
-  <li>Navigation - navigate to a destination</li>
-  <li>DataBinding - to bind UI components in the layouts</li>
+  <li>Dagger -> dependency injection framework</li>
+  <li>Navigation -> navigate to a destination</li>
+  <li>DataBinding -> to bind UI components in the layouts</li>
   <li>Room Library -> used to handle database transaction (to cache the last server response from the itunes search API)</li>
   <li>Dimens.xml -> used to store all view sizes</li>
   <li>strings.xml -> used to store all string label that is needed by the application</li>
