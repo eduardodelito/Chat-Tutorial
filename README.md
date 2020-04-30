@@ -1,6 +1,6 @@
 # Message Tutorial - MVVM
 
-Sample Demo Application to demonstrate MVVM.
+Sample Demo Application to demonstrate MVVM using libraries below:
 
 <ul>
   <li>Dagger -> dependency injection framework</li>
