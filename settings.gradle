@@ -1,5 +1,2 @@
-include ':common'
-include ':message-ui'
-include ':database'
-include ':app'
+include ':app', ':message-ui', ':common', ':database'
 rootProject.name = "Chat Tutorial"
