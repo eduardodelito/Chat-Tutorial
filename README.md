@@ -4,6 +4,7 @@ Sample Demo Application to demonstrate MVVM using libraries below:
 
 <ul>
   <li>Dagger -> dependency injection framework</li>
+  <li>Coroutine -> to executes asynchronously ex. insert, query/delete data from room database</li>
   <li>Navigation -> navigate to a destination</li>
   <li>DataBinding -> to bind UI components in the layouts</li>
   <li>Room Library -> used to handle database transaction (to cache the last server response from the itunes search API)</li>
