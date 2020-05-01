@@ -8,5 +8,7 @@ class MessageViewModel (private val messageRepository: MessageRepository) : Base
 
     fun getMessages() = messageRepository.getMessages()
 
-    fun setMessage(message: MessageEntity) { messageRepository.setMessage(message)}
+    fun setMessage(message: MessageEntity) = messageRepository.setMessage(message)
+
+    fun deleteMessage() = messageRepository.deleteMessage()
 }

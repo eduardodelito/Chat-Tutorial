@@ -17,6 +17,8 @@ interface MessageRepository {
     fun getMessages(): LiveData<List<MessageEntity>>
 
     fun setMessage(message: MessageEntity)
+
+    fun deleteMessage()
 }
 
 class MessageRepositoryImpl(private var messageDao: MessageDao) : MessageRepository, CoroutineScope {
@@ -33,6 +35,16 @@ class MessageRepositoryImpl(private var messageDao: MessageDao) : MessageReposit
     private suspend fun setMessageBG(message: MessageEntity) {
         withContext(Dispatchers.IO) {
             messageDao.setMessage(message)
+        }
+    }
+
+    override fun deleteMessage() {
+        launch { deleteMessageBG() }
+    }
+
+    private suspend fun deleteMessageBG() {
+        withContext(Dispatchers.IO) {
+            messageDao.deleteAll()
         }
     }
 }

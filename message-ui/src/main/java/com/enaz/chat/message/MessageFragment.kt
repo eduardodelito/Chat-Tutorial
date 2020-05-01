@@ -3,6 +3,9 @@ package com.enaz.chat.message
 import android.text.Editable
 import android.text.InputFilter
 import android.text.TextWatcher
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.enaz.chat.adapter.MessageAdapter
@@ -35,6 +38,7 @@ class MessageFragment : BaseFragment<MessageFragmentBinding, MessageViewModel>()
     }
 
     override fun initViews() {
+        setHasOptionsMenu(true)
         messageAdapter = MessageAdapter()
         with(recycler_view) {
             setHasFixedSize(true)
@@ -71,5 +75,28 @@ class MessageFragment : BaseFragment<MessageFragmentBinding, MessageViewModel>()
         viewModel.getMessages().observe(viewLifecycleOwner, Observer<List<MessageEntity>> {
             messageAdapter.updateDataSet(it.entityModelToMessageItem())
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, menuInflater: MenuInflater) {
+        menuInflater.inflate(R.menu.menu_main, menu)
+
+        //hide some items from this fragment (e.g. sort)
+        menu.findItem(R.id.action_delete).isVisible = false
+        menuInflater.inflate(R.menu.menu_main, menu)
+        super.onCreateOptionsMenu(menu, menuInflater)
+    }
+
+    /**
+     * Option menu to delete data list.
+     */
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle presses on the action bar menu items
+        when (item.itemId) {
+            R.id.action_delete -> {
+                    viewModel.deleteMessage()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
